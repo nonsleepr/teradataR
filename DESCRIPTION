@@ -1,0 +1,12 @@
+Package: teradataR
+Type: Package
+Title: Teradata R Package
+Version: 1.0.1
+Date: 2010-10-11
+Author: Todd Brye
+Maintainer: <todd.brye@teradata.com>
+Depends: R (>= 2.11.0)
+Description: This package allows you you access a Teradata database using the R language.  It allows programmers familiar with R to analyze Teradata objects a lot like they would access a data frame object.
+License: GPL (>= 2)
+LazyLoad: yes
+Packaged: 2012-02-17 20:15:40 UTC; toddb

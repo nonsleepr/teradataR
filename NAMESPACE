@@ -1,0 +1,18 @@
+export(as.data.frame.td.data.frame, as.td.data.frame,
+dim.td.data.frame, hist.td.data.frame, is.td.data.frame,
+max.td.data.frame, mean.td.data.frame, median.td.data.frame,
+min.td.data.frame, print.td.data.frame, sum.td.data.frame,
+summary.td.data.frame, td.bincode, td.binomial, td.binomialsign,
+td.call.sp, td.cor, td.cov, td.dagostino.pearson, td.data.frame,
+td.f.oneway, td.factanal, td.freq, td.hist, td.join, td.ks,
+td.lilliefors, td.merge, td.mode, td.mwnkw, td.nullreplace,
+td.overlap, td.quantiles, td.rank, td.recode, td.rescale,
+td.sample, td.shapiro.wilk, td.sigmoid, td.smirnov, td.solve,
+td.stats, td.t.paired, td.t.unpaired, td.t.unpairedi, td.values,
+td.wilcoxon, td.zscore, tdClose, tdConnect, tdMetadataDB, tdQuery,
+tdSave, td.kmeans, predict.kmeans, ASCII, CEIL, CHR, DECODE, EDITDISTANCE,
+FLOOR, INSTR, INTCAP, LENGTH, LPAD, LTRIM, NGRAM, OREPLACE,OTRANSLATE,
+RPAD, RTRIM, Ops.td.data.frame, Ops.td.expression, is.td.expression,
+GREATEST, LEAST, td.tapply, subset.td.data.frame, tdQueryUpdate)
+S3method("[", td.data.frame)
+S3method("[<-", td.data.frame)
