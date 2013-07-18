@@ -33,7 +33,7 @@ function(tdf, col, oTable, oDatabase="", rType="literal", rVal=0.0)
                     oObj, nms, obj, wc)
   if(.td.objectExists(oObj))
     stop(gettextf("Table %s already exists.", oObj))
-	df <- try(tdQuery(query))
+	df <- try(tdQueryUpdate(query))
   if(length(df) == 1L && df == "No Data")
     return(td.data.frame(oTable, oDatabase))
   else

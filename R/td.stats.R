@@ -23,12 +23,12 @@ function(tdf, col, which="all", type="population", group.by=NULL)
   obj <- .td.object(attr(tdf,"tableName"),attr(tdf,"database"))
 	stats <- .td.genstats(col, which, type)
 	if(is.null(group.by))
-	 query <- gettextf("SELECT '%s' as col,%s FROM \"%s\" %s", nm, paste(stats, collapse=","), attr(tdf,"tableName"), wc)
+	 query <- gettextf("SELECT '%s' as col,%s FROM %s %s", nm, paste(stats, collapse=","), obj, wc)
   else
   {
    gb <- paste("\"", names(group.by), "\"", sep="",collapse=",")
-	 query <- gettextf("SELECT %s,'%s' as col,%s FROM \"%s\" %s GROUP BY %s ORDER BY %s", gb, nm, 
-                     paste(stats, collapse=","), attr(tdf,"tableName"), wc, gb, gb)
+	 query <- gettextf("SELECT %s,'%s' as col,%s FROM %s %s GROUP BY %s ORDER BY %s", gb, nm, 
+                     paste(stats, collapse=","), obj, wc, gb, gb)
   }
 	df <- tdQuery(query)
 	if(is.data.frame(df))
