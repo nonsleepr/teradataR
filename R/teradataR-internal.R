@@ -2,7 +2,7 @@
 function(obj)
 {
       query <- gettextf("DROP TABLE %s", obj)
-      df <- try(sqlQuery(tdConnection, query))
+      df <- try(tdQueryUpdate(query))
 }
 
 .td.genbin <-
@@ -1309,7 +1309,7 @@ function(tdf)
   lst <- c()
   obj <- .td.object(attr(tdf,"tableName"),attr(tdf,"database"))
   query <- gettextf("HELP INDEX %s", obj)
-  df <- sqlQuery(tdConnection, query)
+  df <- tdQuery(query)
   for(i in 1:nrow(df))
   {
     if(as.character(df[i,2]) == 'P')
@@ -1345,7 +1345,7 @@ function(tbl, db)
 function(obj)
 {
 	query <- gettextf("SELECT 1 FROM %s SAMPLE 0", obj)
-	df <- try(sqlQuery(tdConnection, query))
+	df <- try(tdQuery(query))
   if(is.data.frame(df))
   {
     cat('Output table already exists.\nDo you wish to DROP it? (y/n) ')
