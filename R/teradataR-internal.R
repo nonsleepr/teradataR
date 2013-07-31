@@ -1327,10 +1327,12 @@ function(table)
   query <- gettextf("SELECT CAST(databasename AS VARCHAR(30)) FROM dbc.tablesX WHERE tablename = '%s'",
                     table)
   df <- try(tdQuery(query))
-  if(nrow(df) == 0L)
-	  stop(gettextf("Unable to locate table %s in any database", table))
-  obj <- .td.object(table, df[[1]])
-  return(obj)
+  if(nrow(df) == 0L) {
+    stop(gettextf("Unable to locate object %s in any database", table))
+  } else {
+    tdMetadataDB(df[[1]])
+    return(.td.object(table, df[[1]]))
+  }
 }
 
 .td.object <-
