@@ -12,7 +12,7 @@ function(tdf1, tdf2, oTable="newMergeTable", oDatabase="", mergeType="union")
     stop(gettextf("Table %s already exists.", oObj))
 	query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA",
 	                  oObj, mergeText)
-	df <- try(tdQuery(query))
+	df <- try(tdQueryUpdate(query))
   if(length(df) == 1L && df == "No Data")
     return(td.data.frame(oTable, oDatabase))
   else

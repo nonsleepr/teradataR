@@ -28,13 +28,16 @@ predict.kmeans <- function(object, newdata=NULL, oTable="", oDatabase="", ...)
     if(!nchar(oTable))
       stop("When using a td data frame you must supply an 'oTable' parameter")
     oObj <- .td.object(oTable, oDatabase)
-    if(.td.objectExists(oObj))
-      stop(gettextf("Table %s already exists.", oObj))
     kmeansText <- .td.genkmeans(newdata, object)
     query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA",
 	                    oObj, kmeansText)
-    tdQuery(query)
-    return(td.data.frame(oTable, oDatabase))
+    if(.td.objectExists(oObj))
+      stop(gettextf("Table %s already exists.", oObj))
+	df <- try(tdQueryUpdate(query))
+    if(length(df) == 1L && df == "No Data")
+      return(td.data.frame(oTable, oDatabase))
+    else
+      stop(gettextf("Error: %s", paste(df, collapse="")))
   }
 }
 

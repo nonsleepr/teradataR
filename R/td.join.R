@@ -18,7 +18,7 @@ function(tdf1, tdf2, otable="newJoinTable", odatabase="",
     stop(gettextf("Table %s already exists.", oObj))
 	query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA",
 	                  oObj, joinText)
-	df <- try(tdQuery(query))
+	df <- try(tdQueryUpdate(query))
   if(length(df) == 1L && df == "No Data")
     return(td.data.frame(oTable, oDatabase))
   else

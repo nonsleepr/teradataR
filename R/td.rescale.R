@@ -1,8 +1,8 @@
 td.rescale <-
 function(tdf, col, oTable, oDatabase="", lower=0.0, upper=1.0)
 {
-	if(!is.td.data.frame(tdf))
-		stop("'tdf' is not a td data frame")
+  if(!is.td.data.frame(tdf))
+    stop("'tdf' is not a td data frame")
   obj <- .td.object(attr(tdf,"tableName"),attr(tdf,"database"))
   wc <- ""
   if(!is.null(attr(tdf, "whereClause")))
@@ -20,7 +20,7 @@ function(tdf, col, oTable, oDatabase="", lower=0.0, upper=1.0)
                     gettextf("SELECT %s FROM %s %s", paste(.td.genstats(col,c("min","max")),collapse=","), obj, wc), wc)
   if(.td.objectExists(oObj))
     stop(gettextf("Table %s already exists.", oObj))
-	df <- try(tdQuery(query))
+  df <- try(tdQueryUpdate(query))
   if(length(df) == 1L && df == "No Data")
     return(td.data.frame(oTable, oDatabase))
   else

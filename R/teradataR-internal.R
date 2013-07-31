@@ -1346,21 +1346,12 @@ function(obj)
 {
     obj_split = unlist(strsplit(obj,'\\.'))
     query <- gettextf("SELECT 1 FROM dbc.tablesX WHERE databasename = '%s' AND tablename = '%s'",
-        obj_split[1], obj_split[2])
+        gsub('(^"|"$)','',obj_split[1]), gsub('(^"|"$)','',obj_split[2]))
 	df <- try(tdQuery(query))
-  if(is.data.frame(df))
-  {
-    cat('Output table already exists.\nDo you wish to DROP it? (y/n) ')
-    ans <- readLines(,1)
-    if(ans == "y")
-    {
-       .td.dropTable(obj)
-       return(FALSE)
-    }
-    else
-      return(TRUE)
-  }
-  return(FALSE)
+  if(nrow(df) > 0)
+    return(TRUE)
+  else
+    return(FALSE)
 }
 
 .td.objectIsNumeric <-

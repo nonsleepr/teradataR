@@ -17,7 +17,7 @@ function(tdf,sizes=missing,otable="",odatabase="")
 	  oObj <- .td.object(otable, odatabase)
     if(.td.objectExists(oObj))
       stop(gettextf("Table %s already exists.", oObj))
-	  query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA",
+	query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA",
 	                    oObj, query)
 	}
 	df <- try(tdQueryUpdate(query))
