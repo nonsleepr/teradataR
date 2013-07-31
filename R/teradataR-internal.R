@@ -1344,7 +1344,9 @@ function(tbl, db)
 .td.objectExists <-
 function(obj)
 {
-	query <- gettextf("SELECT 1 FROM %s SAMPLE 0", obj)
+    obj_split = unlist(strsplit(obj,'\\.'))
+    query <- gettextf("SELECT 1 FROM dbc.tablesX WHERE databasename = '%s' AND tablename = '%s'",
+        obj_split[1], obj_split[2])
 	df <- try(tdQuery(query))
   if(is.data.frame(df))
   {
