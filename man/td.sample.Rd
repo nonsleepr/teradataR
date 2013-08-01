@@ -7,7 +7,7 @@ Sample Rows
 Function to allow table a sample from a Teradata table.
 }
 \usage{
-td.sample(tdf, sizes = 10, otable = "", odatabase = "")
+td.sample(tdf, sizes = missing, otable = "", odatabase = "")
 }
 \arguments{
   \item{tdf}{
