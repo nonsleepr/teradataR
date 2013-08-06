@@ -1,8 +1,8 @@
 td.join <-
-function(tdf1, tdf2, otable="newJoinTable", odatabase="",
+function(tdf1, tdf2, oTable="newJoinTable", oDatabase="",
                    index1="", index2="", joinType="inner")
 {
-  oObj <- .td.object(otable,odatabase)
+  oObj <- .td.object(oTable,oDatabase)
   if(missing(index1))
     index1 <- .td.getPrimaryIndicies(tdf1)
   if(missing(index2))
