@@ -1,6 +1,4 @@
-is.td.expression <-
-function(x)
-{
-    inherits(x,"td.expression")
+is.td.expression <- function(x) {
+    inherits(x, "td.expression")
 }
-
+ 
