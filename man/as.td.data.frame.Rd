@@ -13,6 +13,9 @@ as.td.data.frame(x, ...)
   \item{x}{
 data frame.
 }
+  \item{\dots}{
+    Allow other commands to be sent to plot.
+}
 }
 \details{
 If a data frame is supplied a new table is created on the Teradata system in the

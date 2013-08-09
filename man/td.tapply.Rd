@@ -26,8 +26,6 @@ td.tapply(X, INDEX, FUN = NULL, asdf = FALSE, ...)
     forward information.
 }
 }
-\details{
-}
 \value{
 Array dimensioned by the INDEX containing the result of applying FUN to the data.  If asdf = TRUE
 the result will instead be a data frame of the results.

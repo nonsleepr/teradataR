@@ -7,7 +7,7 @@ Join Tables in Teradata
 Join tables in Teradata based on their td data frames and index values.
 }
 \usage{
-td.join(tdf1, tdf2, otable = "newJoinTable", odatabase = "", index1 = "", index2 = "", joinType = "inner")
+td.join(tdf1, tdf2, oTable = "newJoinTable", oDatabase = "", index1 = "", index2 = "", joinType = "inner")
 }
 \arguments{
   \item{tdf1}{
@@ -16,10 +16,10 @@ td.join(tdf1, tdf2, otable = "newJoinTable", odatabase = "", index1 = "", index2
   \item{tdf2}{
     second td data fame of table two.
 }
-  \item{otable}{
+  \item{oTable}{
     output table name of result.
 }
-  \item{odatabase}{
+  \item{oDatabase}{
     output database name of result.
 }
   \item{index1}{

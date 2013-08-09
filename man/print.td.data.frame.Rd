@@ -8,11 +8,14 @@ Display information about the td data frame such as database, tablename, and
 column names.
 }
 \usage{
-\method{print}{td.data.frame}(x)
+\method{print}{td.data.frame}(x, \dots)
 }
 \arguments{
   \item{x}{
     td data frame.
+}
+  \item{\dots}{
+    Allow other commands to be sent to plot.
 }
 }
 \details{

@@ -7,7 +7,7 @@ Subsetting a Teradata Data Frame
 Return subsets of teradata data frames which meet conditions.
 }
 \usage{
-subset(x, subset, select, drop = FALSE)
+\method{subset}{td.data.frame}(x, subset, select, drop = FALSE, \dots)
 }
 \arguments{
   \item{x}{
@@ -21,6 +21,9 @@ subset(x, subset, select, drop = FALSE)
 }
   \item{drop}{
     passed on to [ indexing operator.
+}
+  \item{\dots}{
+    Allow other commands to be sent to plot.
 }
 }
 \details{

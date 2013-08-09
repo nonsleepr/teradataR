@@ -1,4 +1,4 @@
-print.td.data.frame <- function(x) {
+print.td.data.frame <- function(x, ...) {
     obj <- .td.object(attr(x, "tableName"), attr(x, "database"))
     rows <- attr(x, "sampleRows")
     cols <- length(names(x))

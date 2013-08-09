@@ -7,7 +7,7 @@ Sample Rows
 Function to allow table a sample from a Teradata table.
 }
 \usage{
-td.sample(tdf, sizes = missing, otable = "", odatabase = "")
+td.sample(tdf, sizes = missing, oTable = "", oDatabase = "")
 }
 \arguments{
   \item{tdf}{
@@ -16,10 +16,10 @@ td.sample(tdf, sizes = missing, otable = "", odatabase = "")
   \item{sizes}{
     size specification for the sample or samples you'd like to take.
 }
-  \item{otable}{
+  \item{oTable}{
     output table name.
 }
-  \item{odatabase}{
+  \item{oDatabase}{
     output database name.
 }
 }
