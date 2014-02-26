@@ -781,8 +781,8 @@
     if (nrow(df) == 0L) {
         stop(gettextf("Unable to locate object %s in any database", table))
     } else {
-        tdMetadataDB(df[[1]])
-        return(.td.object(table, df[[1]]))
+        tdMetadataDB(as.character(df[[1]]))
+        return(.td.object(table, as.character(df[[1]])))
     }
 }
 
