@@ -16,6 +16,8 @@ Prebuilt package could be found [here](https://github.com/Teradata/teradataR/raw
 ## Installation
 
 To install the package, issue the following command from R REPL:
+
     install.packages("C:\\Documents and Settings\\User\\My Documents\\Downloads\\teradataR_1.1.0.tar.gz", repos=NULL,type="source");
+
 Where first argument is the path to the package file.
 
