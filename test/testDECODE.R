@@ -7,7 +7,7 @@
 # 3 
 # 2 
 
-tdf <- td.data.frame("test")
+tdf <- td.data.frame("tab1")
 tdf["c10"] <- DECODE(tdf["c1"], default='none', 1, 'Alpha', 2, 'Bravo', 3, 'Charlie', 4, 'Delta')
 as.td.data.frame(tdf, tableName="tab2")
 
