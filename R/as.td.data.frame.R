@@ -1,5 +1,5 @@
 as.td.data.frame <- function(x, ...) {
-    if (inherits(x, "td.data.frame")) {
+  if (inherits(x, "td.data.frame")) {
         args <- list(...)
         if (is.null(args[["tableName"]])) 
             tbl <- deparse(substitute(x)) else tbl <- args[["tableName"]]
@@ -13,6 +13,7 @@ as.td.data.frame <- function(x, ...) {
         query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA", oObj, selectText)
         df <- try(tdQueryUpdate(query))
         if (length(df) == 1L && df == "No Data") 
+            
             return(td.data.frame(tbl, oDatabase)) else stop(gettextf("Error: %s", paste(df, collapse = "")))
     }
     if (inherits(x, "data.frame")) {

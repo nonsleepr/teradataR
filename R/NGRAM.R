@@ -1,25 +1,33 @@
-NGRAM <- function(x, second_string, gram_length) {
+NGRAM <- function(x, y, gram_length) {
+    #helper function acts as a setter for class td.expression
     asTdExpr <- function(x) {
         class(x) <- "td.expression"
         return(x)
     }
-    
+    #set up base text
     ofmt <- "NGRAM(%s,%s,%d)"
-    if (inherits(x, "td.data.frame")) {
-        if (length(x) == 1) {
-            if (!is.null(attr(x, "expressions"))) 
-                val <- attr(x, "expressions")[[names(x)]] else val <- names(x)
-            
-        } else {
-            message("NGRAM warning:  td.data.frame 'x' has length > 1 using first element")
-            val <- names(x)[1]
+    #determine datatype of parameters
+    if (inherits(x, "td.data.frame") || inherits(y, "td.data.frame")) {
+        if (length(x) == 1 && length(y) == 1) {
+            if (!is.null(attr(x, "expressions")) && (!is.null(attr(y, "expressions")))) {
+                val1 <- attr(x, "expressions")[[names(x)]] 
+                val2 <- attr(y, "expressions")[[names(y)]]
+            }
+            else {
+                val1 <- names(x)
+                val2 <- names(y)
+            }
         }
-        
-        return(asTdExpr(gettextf(ofmt, val, second_string, gram_length)))
+        else {
+            message("NGRAM warning:  td.data.frame 'x' or 'y' has length > 1 using first element")
+            val1 <- names(x)[1]
+            val2 <- names(y)[1]
+        }
+        return(asTdExpr(gettextf(ofmt, val1, val2, gram_length)))
         
     }
-    
-    if (inherits(x, "character") || inherits(x, "td.expression")) {
-        return(asTdExpr(paste("NGRAM(", x, ",", second_string, ",", gram_length, ")", sep = "")))
+    #check for other datatypes
+    if (inherits(x, "character") || inherits(x, "td.expression") || inherits(y, "character") || inherits(y, "td.expression")) {
+        return(asTdExpr(paste("NGRAM(", x, ",",y, ",", gram_length, ")", sep = "")))
     }
 } 
