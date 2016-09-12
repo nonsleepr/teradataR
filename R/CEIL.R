@@ -7,7 +7,7 @@ CEIL <- function(x) {
     } else if (inherits(x, "td.expression") || inherits(x, "numeric")) 
         val <- paste("CEIL(", x, ")", sep = "") else if (inherits(x, "character")) 
         val <- paste("CEIL('", x, "')", sep = "") else stop("Invalid data type for 'x' in CEIL function")
-    
+
     class(val) <- "td.expression"
     return(val)
 }

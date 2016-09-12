@@ -4,7 +4,7 @@ td.data.frame <- function(table, database = "") {
     query <- gettextf("SELECT * FROM %s SAMPLE 0", obj)
     res <- try(tdQuery(query))
     if (is.null(attr(res, "class"))) {
-        res <- data.frame()
+        res <- data.frame(stringsAsFactors = FALSE)
         attr(res, "totalRows") <- 0
         warning("Teradata table not found.  Result is empty data frame.")
     } else {
