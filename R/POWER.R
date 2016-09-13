@@ -6,7 +6,7 @@ POWER <- function(x, exponent = 1) {
     
     pfmt <- "POWER(%s, %s)"
     if (inherits(x, "td.data.frame")) {
-        if (length(x) == 1 || length(exponent0) == 1) {
+        if (length(x) == 1 || length(exponent) == 1) {
             if (!is.null(attr(x, "expressions"))) {
                 val1 <- attr(x, "expressions")[[names(x)]]
             }
@@ -14,7 +14,7 @@ POWER <- function(x, exponent = 1) {
                 val1 <- names(x)
             }
             if (!is.null(attr(exponent, "expressions"))) {
-                val2 <- attr(exponent, "expressions")[[names(x)]]
+                val2 <- attr(exponent, "expressions")[[names(exponent)]]
             }
             else {
               val2 <- names(exponent)
