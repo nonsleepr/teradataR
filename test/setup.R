@@ -37,34 +37,54 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Table Name: test
 # This table is used for testing functions for character manipulation.  It 
-# works with the tests for CHR() and INITCAP().
+# works with the tests for CHR(), INITCAP(), and NGRAM().
 #
 # drop table test;
 # drop table test2;
 # create table test (
 # c1 integer,
-# c2 varchar(256),
-# c3 varchar(256));
+# c2 varchar(100),
+# c3 varchar(100));
 #
-# insert into test (c1, c2, c3) values (1, 'cat', 'dog');
+# insert into test (c1, c2, c3) values (1, 'mouse', 'house');
 # insert into test (c1, c2, c3) values (2, 'fork', 'spoon');
 # insert into test (c1, c2, c3) values (3, 'ball', 'bat');
 # insert into test (c1, c2, c3) values (4, 'robot', 'human');
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# insert into test (c1, c2, c3) values (5, 'cat', 'dog');
+# insert into test (c1, c2, c3) values (6, 'horse', 'force');
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Table Name: charTab
 # This table is used for testing functions that search characters under 
-# certain conditions.  It works with tests for INSTR(),
+# certain conditions.  It works with tests for INSTR(), OREPLACE(), OTRANSLATE().
 # 
 # drop table charTab;
 # drop table charTab2;
 # create table charTab (
 # c1 varchar(50),
 # c2 varchar(50),
-# c3 varchar(50));
+# c3 varchar(50),
+# c4 varchar(50),
+# c5 varchar(50));
 #
-# insert into charTab (c1, c2) values ('explore', 'lo', 'xx');
-# insert into charTab (c1, c2) values ('interrupt', 'ter', 'xyz');
-# insert into charTab (c1, c2) values ('disappear', 'ar', 'yy');
-# insert into charTab (c1, c2) values ('factor', 'ac', 'xy');
-# insert into charTab (c1, c2) values ('appreciate', 'pp', 'xx');
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# insert into charTab (c1, c2, c3, c4, c5) values ('explore', 'lo', 'xx', 'e', 'z');
+# insert into charTab (c1, c2, c3, c4, c5) values ('interrupt', 'ter', 'xyz', 'u', 'z');
+# insert into charTab (c1, c2, c3, c4, c5) values ('disappear', 'ar', 'yy', 's', 'z');
+# insert into charTab (c1, c2, c3, c4, c5) values ('factor', 'ac', 'xy', 'c', 'z');
+# insert into charTab (c1, c2, c3, c4, c5) values ('appreciate', 'pp', 'xx', 'r', 'z');
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Table Name: padTab
+# This table is used for testing functions that manipulate white space.  It
+# works with tests for LPAD(), LTRIM(), RPAD(), and RTRIM().
+# 
+# drop table padTab;
+# drop table padTab2;
+# create table padTab (
+# c1 varchar(10),
+# c2 varchar(10),
+# c3 varchar(10));
+#
+# insert into padTab (c1, c2, c3) values ('Emily      ','     Emily', 'Emily');
+# insert into padTab (c1, c2, c3) values ('Daisy      ', '     Daisy', 'Daisy');
+# insert into padTab (c1, c2, c3) values ('Hank       ', '      Hank', 'Hank');
+# insert into padTab (c1, c2, c3) values ('Amy        ', '       Amy', 'Amy');
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
