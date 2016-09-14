@@ -88,3 +88,19 @@
 # insert into padTab (c1, c2, c3) values ('Hank       ', '      Hank', 'Hank');
 # insert into padTab (c1, c2, c3) values ('Amy        ', '       Amy', 'Amy');
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Table Name: numManip
+# This table is used for testing functions that manupulate numbers.  It works 
+# with tests for TO_NUMBER() and TRUNC().
+#
+#
+# drop table numManip;
+# drop table numManip2;
+# create table numManip (
+# c1 character(5),
+# c2 number);
+#
+# insert into numManip (c1, c2) values ('1', 555.3);
+# insert into numManip (c1, c2) values ('2', 8.289);
+# insert into numManip (c1, c2) values ('3', 48.1);
+# insert into numManip (c1, c2) values ('4', 17.06);
+# insert into numManip (c1, c2) values ('5', 13.99);
