@@ -59,11 +59,12 @@
 # drop table charTab2;
 # create table charTab (
 # c1 varchar(50),
-# c2 varchar(50));
+# c2 varchar(50),
+# c3 varchar(50));
 #
-# insert into charTab (c1, c2) values ('explore', 'lo');
-# insert into charTab (c1, c2) values ('interrupt', 'ter');
-# insert into charTab (c1, c2) values ('disappear', 'ar');
-# insert into charTab (c1, c2) values ('factor', 'ac');
-# insert into charTab (c1, c2) values ('appreciate', 'pp');
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# insert into charTab (c1, c2) values ('explore', 'lo', 'xx');
+# insert into charTab (c1, c2) values ('interrupt', 'ter', 'xyz');
+# insert into charTab (c1, c2) values ('disappear', 'ar', 'yy');
+# insert into charTab (c1, c2) values ('factor', 'ac', 'xy');
+# insert into charTab (c1, c2) values ('appreciate', 'pp', 'xx');
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,24 +1,24 @@
-# Below is the table used for the test, called "tab1"
-# c1          c2
-# ----------  ----
-# explore     lo
-# interrupt   ter
-# disappear   ar
-# factor      ac
-# appreciate  pp
+# Below is the table used for the test, called "charTab"
+# c1          c2        c3
+# ----------  ---- -------
+# explore     lo        xx
+# interrupt   ter      xyz
+# disappear   ar        yy
+# factor      ac        xy
+# appreciate  pp        xx
 
-tdf <- td.data.frame("tab1")
+tdf <- td.data.frame("charTab")
 tdf["c3"] <- INSTR(tdf["c1"], tdf["c2"])
-as.td.data.frame(tdf, tableName="tab2")
+as.td.data.frame(tdf, tableName="charTab2")
 
-# This is the resulting table, called "tab2"
-# c1          c2                                         c3
-# ----------  ----  ----------------------------------------
-# explore     lo                                           0
-# interrupt   ter                                          0
-# disappear   ar                                           0
-# factor      ac                                           0
-# appreciate  pp                                           0
+# This is the resulting table, called "charTab2"
+# c1          c2         c3
+# ----------  ----  -------
+# explore     lo         xx                                  
+# interrupt   ter       xyz                                   
+# disappear   ar         yy                                   
+# factor      ac         xy                                   
+# appreciate  pp         xx                                  
 
 # While running the equivalent code in bteq produces the same table, this test does not seem to give the expected output
 # I recommend further testing.
