@@ -1,1 +1,0 @@
-query1 <- toQuery(selectPhrase=string, ons=string, phase="local", as="D2")
