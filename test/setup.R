@@ -5,7 +5,7 @@
 
 # Table Name: numTab
 # This table is used for testing numeric functions.  It works with the tests for
-# DECODE(), POWER(), and TO_CHAR().
+# AVG(), DECODE(), POWER(), and TO_CHAR().
 # 
 # drop table numTab;
 # drop table numTab2;
