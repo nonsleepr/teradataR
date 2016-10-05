@@ -884,3 +884,46 @@
     
     return(query)
 } 
+
+.td.makeHash <- function(...) {
+  baseText = "hash by %s"
+  dependents = paste(...)
+  return(gettextf(baseText, dependents))
+}
+
+.td.makePartition <- function(...) {
+  baseText = "partition by %s"
+  dependents = paste(...)
+  return(gettextf(baseText, dependents))
+} 
+
+.td.makeOrder <- function(...) {
+  baseText = "order by %s"
+  dependents = paste(...)                       
+  return(gettextf(baseText, dependents))
+}                       
+
+.td.makeLocalOrder <- function(null_order=NULL, local_order=NULL, ...) {
+  baseText = "local order by %s"
+  if (!is.null(nullOrder)) {
+    specialValue = paste(nullOrder)
+    orderByList = paste(...)
+    dependents = paste(orderByList, specialValue)
+    return(gettextf(baseText, dependents))
+  }
+  else {
+    dependents = paste(...)
+    return(gettextf(baseText, dependents))
+  }
+}                           
+
+.td.makeDimension <- function() {
+  baseText = "dimension"
+  return(baseText)
+}
+
+.td.makeAs <- function(...) {
+  baseText = "as %s"
+  dependents = paste(...)
+  return(gettextf(baseText, dependents))
+}

@@ -16,7 +16,7 @@ td.kmeans <- function(x, centers, iter.max = 10, nstart = 1) {
     nms <- paste(gettextf("\"%s\"", names(x)), collapse = ",")
     maxD <- 0
     for (i in 1:nstart) {
-        testClusters <- tdQuery(gettextf("SELECT %s FROM %s %s SAMPLE %d", nms, obj, wc, centers))
+        testClusters <- tdQuery(gettextf("SELECT DISTINCT %s FROM %s %s SAMPLE %d", nms, obj, wc, centers))
         curD <- 0
         for (j in 1:centers - 1) {
             for (k in (j + 1):centers) curD <- curD + sum(dist(testClusters[c(j, k), ]))
