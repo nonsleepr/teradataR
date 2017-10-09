@@ -15,10 +15,10 @@ RPAD(x, ilength, fill_string = " ")
   \item{x}{
 a teradata dataframe that contains column(s) of characters that will be padded
 }
-  \item{ilength} {
+\item{ilength}{
 the amount of padding to append to the beginning of the character  
 }
-  \item{fill_string} {
+\item{fill_string}{
 the character used to pad the the column(s) of characters that are passed into the function.  Default character is the empty character
 }
 }

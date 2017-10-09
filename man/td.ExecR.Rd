@@ -15,19 +15,19 @@ td.ExecR(selectPhrase=string, ons=list(), returns=NULL, contract=NULL, operator=
   \item{selectPhrase}{
 a character that represents a select phrase
 }
-  \item{ons} {
+  \item{ons}{
 a list or character representation of on clauses 
 }
-  \item{returns} {
+  \item{returns}{
 a file or character representation of a returns clause  
 }
-  \item{contract} {
+  \item{contract}{
 a file or character representation of a contract clause  
 }
-  \item{operator} {
+  \item{operator}{
 a file or character representation of an operator clause 
 }
-  \item{optional_operators} {
+  \item{optional_operators}{
 a character representation of any other needed operators 
 }
 }
