@@ -12,28 +12,28 @@ td.CalcMatrix(selectPhrase=string, ons=string, phase=NULL, calctype=NULL, output
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{selectPhrase}{
+\item{selectPhrase}{
  a character that represents the select clause for a query expression
 }
-  \item{ons} {
+\item{ons}{
 a character or list representation of the needed ON Clauses 
 }
-  \item{phase} {
+\item{phase}{
 the character representation of the input of the optional PHASE clause  
 }
-  \item{calctype} {
+\item{calctype}{
 the character representation of the input of the optional CALCTYPE clause  
 }
-  \item{output} {
+\item{output}{
 the character representation of the input of the optional OUTPUT clause  
 }
-  \item{null_handling} {
+\item{null_handling}{
 the character representation of the input of the optional specfication for null handling  
 }
-  \item{optional_operators} {
+\item{optional_operators}{
 the character representation of the other operators that can be specified  
 }
-  \item{as} {
+\item{as}{
 creates and alias  
 }
 }

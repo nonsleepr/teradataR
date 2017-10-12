@@ -12,34 +12,34 @@ on(target=NULL, from=NULL, subQuery=NULL, partition=NULL, hash=NULL, order=NULL,
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{target}{
+\item{target}{
 a character that represents a name of a table or a query expression
 }
-  \item{from} {
+\item{from}{
 a character that represents a name of the origin of a query expression
 }
-  \item{subQuery}{
+\item{subQuery}{
 a character that represents a nested ON Clause or nested query expression that is part of an ON Clause
 }
-  \item{partition} {
+\item{partition}{
 the parallel option, partition by <column>, or partition by <any>  
 }
- \item{hash} {
+\item{hash}{
 the parallel option, hash by <column>
 }
-  \item{order}{
+\item{order}{
 the parallel option, order by <column> 
 }
-  \item{local_order}{
+\item{local_order}{
 the parallel option, local order by <column>
 }
-  \item{null_order}{
+\item{null_order}{
 specification for the parallel option local_order 
 }
-  \item{dimension} {
+\item{dimension}{
 the parallel option, dimension 
 }
-  \item{as} {
+\item{as}{
 creates and alias    
 }
 }
