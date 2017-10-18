@@ -1,0 +1,66 @@
+#on1 <- on(target="select var1, var2, var3, var4, var5", from="testCM")
+#res1 <- td.CalcMatrix(selectPhrase='select * from TD_SYSFNLIB.calcmatrix', ons=on1, phase="local", as= "D1")
+#query1 <- tdQuery(res1)
+#print(query1)
+
+#on2 <- on(target= "select * from numbers") 
+#res2 <- td.CalcMatrix(selectPhrase="select session as ampkey, D1.* from TD_SYSFNLIB.calcmatrix", ons=on2, phase="LOCAL", as="D1")
+#query2 <- tdQuery(res2)
+#print(query2)
+
+#on3 <- on(target="select var1, var2, var3, var4, var5 from TestCM2")
+#res4 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on3, phase="local", as="D1")
+#query4 <- tdQuery(res4)
+#print(query4)
+
+#on4 <- on(target ="select * from TestCMLocal", hash="p")
+#res5 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on4, phase="combine", calctype="sscp", output="columns", as="D1")
+#query5 <- tdQuery(res5)
+#print(query5)
+
+#on5 <- on(target ="select * from TestCMLocal", hash="p")
+#res6 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on5, phase="combine", calctype="CSSCP", output="columns", as="D1")
+#query6 <- tdQuery(res6)
+#print(query6)
+
+#on6 <-on(target="select * from TestCMLocal", hash="p")
+#res7 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on6, phase="combine", calctype="COV", output="columns", as="D1")
+#query7 <- tdQuery(res7)
+#print(query7)
+
+#on7 <- on(target="select * from TestCMLocal", hash="p")
+#res8 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on7, phase="combine", calctype="COR", output="varbyte", as="D1")
+#query8 <- tdQuery(res8)
+#print(query8)
+
+#on8 <- on(target="select * from TestCMLocal", hash="p")
+#res9 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on8, phase="combine", calctype="SSCP", output="varbyte", as="D1")
+#query9 <- tdQuery(res9)
+#print(query9)
+
+#on9 <- on(target="select var1, var2, var3, var4, var5 from TestCMNull")
+#res10 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on9, phase="local", null_handling="ignore", as="D1")
+#query10 <- tdQuery(res10)
+#print(query10)
+
+#on10 <- on(target="select var1, var2, var3, var4, var5", from="TestCMNull")
+#res11 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on10, phase="local", null_handling="zero", as="D1")
+#query11 <- tdQuery(res11)
+#print(query11)
+
+#on11 <- on(target="select p, var1, var2, var3, var4, var5 from TestCM_Mult", local_order="p")
+#res12 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on11, phase="local", as="D1")
+#query12 <- tdQuery(res12)
+#print(query12)
+
+#on12 <- on(target="select p, var1, var2, var3, var4, var5 from TestCM_Mult", local_order="p")
+#res13 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on12, phase="local", as="D1")
+#query13 <- tdQuery(res13)
+#print(query13)
+
+#on14 <- on(target="select p, var1, var2, var3, var4,var5", from="TESTCM_Mult", local_order = "p")
+#sub1 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on14, phase="local", as="D1")
+#on15 <- on(target=sub1, hash="p", local_order="p")
+#res14 <- td.CalcMatrix(selectPhrase="select * from TD_SYSFNLIB.calcmatrix", ons=on15, phase="combine", calctype="esscp", as="D2")
+#query14 <- tdQuery(res14)
+#print(query14)

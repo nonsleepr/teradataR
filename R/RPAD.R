@@ -4,7 +4,7 @@ RPAD <- function(x, ilength, fill_string = " ") {
         return(x)
     }
     
-    rfmt <- "RPAD(%s,%d,%s)"
+    rfmt <- "RPAD(\"%s\",%d,\'%s\')"
     if (inherits(x, "td.data.frame")) {
         if (length(x) == 1) {
             if (!is.null(attr(x, "expressions"))) 
@@ -20,6 +20,6 @@ RPAD <- function(x, ilength, fill_string = " ") {
     }
     
     if (inherits(x, "character") || inherits(x, "td.expression")) {
-        return(asTdExpr(paste("RPAD(", x, ",", ilength, ",", fill_string, ")", sep = "")))
+        return(asTdExpr(paste("RPAD(\"", x, "\",", ilength, ",", fill_string, ")", sep = "")))
     }
 } 

@@ -1,0 +1,75 @@
+source("~/Documents/RRR/Code/ExecR.R")
+
+#on1 <- on(target= "select * from test", hash="c1", local_order="c2")
+#onList <- list(on1)
+#res1 <- td.ExecR(selectPhrase="select distinct * from TD_SYSGPL.ExecR", ons=onList, contract="~/Documents/RRR/contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators="keeplog(1)\nlogdebug(1)")
+#query1 <- tdQuery(res1)
+#print(query1)
+
+#on2 <- on(target="test", dimension="")
+#onList2 <-list( on3)
+#print(onList2)
+#res2 <- td.ExecR(selectPhrase="select distinct * from TD_SYSGPL.ExecR", ons=onList2, contract="~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators="keeplog(1)\nlogdebug(1)")
+#query2 <- tdQuery(res2)
+#print(query2)
+
+#on4 <- on(target="numbers", partition="1")
+#on5 <- on(target="numbers", dimension="")
+#onList3 <- list(on4, on5)
+#res3 <- td.ExecR(selectPhrase="select distinct * from TD_SYSGPL.ExecR", ons=onList3, contract="~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators=NULL)
+#query3 <- tdQuery(res3)
+#print(query3)
+
+#on6 <- on(target="select 1", partition="1")
+#on7 <- on(target="select * from test", dimension = "")
+#onList4 <- list(on6, on7)
+#res4 <- td.ExecR(selectPhrase = "select * from TD_SYSGPL.ExecR", ons=onList4, contract="~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators = "keeolog(1)\nlogdebug(1)")
+#query4 <- tdQuery(res4)
+#print(query4)
+
+#on8 <- on(target="select * from test", as="test")
+#res5 <- td.ExecR(selectPhrase = "select * from TD_SYSGPL.ExecR", ons=on8, contract= "~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators="keeplog(1)\nlogdebug(1)")
+#query5 <- tdQuery(res5)
+#print(query5)
+
+#on9 <- on(target="test", as="test1", partition="c1")
+#on10 <- on(target ="test", as="test2", dimension="")
+#onList5 <- list(on9, on10)
+#res6 <- td.ExecR(selectPhrase="select distinct * from TD_SYSGPL.ExecR", ons=onList5, contract= "~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators="keeplog(1)\nlogdebug(1)")
+#query6 <- tdQuery(res6)
+#print(query6)
+
+#on11 <- on(target="test", as="test1", partition="c1")
+#on12 <- on(target="test", as="test2", dimension=" ")
+#on13 <- on(target="test", as="test3", dimension=" ")
+#onList6 <- list(on11, on12, on13)
+#res7 <- td.ExecR(selectPhrase="select distinct * from TD_SYSGPL.ExecR", ons=onList6, contract="~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators = "keeplog(1)\nlogdebug(1)")
+#query7 <- tdQuery(res7)
+#print(query7)
+
+#on14 <- on(target="select *", from ="test", hash="c1", local_order="c1")
+#res8 <- td.ExecR(selectPhrase="select distinct * from TD_SYSGPL.ExecR", ons=on14, contract="~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt")
+#query8 <- tdQuery(res8)
+#print(query8)
+
+#on15 <- on(target= "select * from test", partition="c1")
+#res9 <- td.ExecR(selectPhrase="select * from TD_SYSGPL.ExecR", ons=on15, contract="~/Documents/RRR/Contract.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators="keeplog(1)\nlogdebug(1)")
+#query9 <- tdQuery(res9)
+#print(query9)
+
+#on16 <- on(target="twm_customer_analysis", partition="marital_status")
+#res10 <- td.ExecR(selectPhrase="select * from TD_SYSGPL.ExecR", ons=on16, returns="~/Documents/RRR/returns.txt", operator="~/Documents/RRR/Test/basicOperator.txt", optional_operators="keeplog(1)\nlogdebug(1)")
+#query10 <- tdQuery(res10)
+#print(query10)
+
+#test case does not work
+#on17 <- on(target="select * from test")
+#res11 <- td.ExecR(selectPhrase="select * from TD_SYSGPL.ExecR", ons=on17, returns="testout", operator="~/Documents/RRR/Test/basicOperator.txt")
+#query11 <- tdQuery(res11)
+#print(query11)
+
+#test case missing contract clause.  Should get an error
+#on18 <- on(target="select *", from="test")
+#res12 <- td.ExecR(selectPhrase="select * from TD_SYSGPL.ExecR", ons=on18, operator="~/Documents/RRR/Test/basicOperator.txt")
+#query12 <- tdQuery(res12)
+#print(query12)

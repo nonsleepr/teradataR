@@ -884,3 +884,98 @@
     
     return(query)
 } 
+
+.td.makeHash <- function(...) {
+  baseText = "hash by %s"
+  dependents = paste(...)
+  return(gettextf(baseText, dependents))
+}
+
+.td.makePartition <- function(...) {
+  baseText = "partition by %s"
+  dependents = paste(...)
+  return(gettextf(baseText, dependents))
+} 
+
+.td.makeOrder <- function(...) {
+  baseText = "order by %s"
+  dependents = paste(...)                       
+  return(gettextf(baseText, dependents))
+}                       
+
+.td.makeLocalOrder <- function(null_order=NULL, local_order=NULL, ...) {
+  baseText = "local order by %s"
+  if (!is.null(nullOrder)) {
+    specialValue = paste(nullOrder)
+    orderByList = paste(...)
+    dependents = paste(orderByList, specialValue)
+    return(gettextf(baseText, dependents))
+  }
+  else {
+    dependents = paste(...)
+    return(gettextf(baseText, dependents))
+  }
+}                           
+
+.td.makeDimension <- function() {
+  baseText = "dimension"
+  return(baseText)
+}
+
+.td.makeAs <- function(...) {
+  baseText = "as %s"
+  dependents = paste(...)
+  return(gettextf(baseText, dependents))
+}
+
+.td.getOperator <- function(operator){
+  if (!is.character(operator) || nchar(operator) == 0){
+    stop("operator argument must be a character vector")
+  }
+  
+  if (file.exists(operator)){
+    return (readChar(operator, file.info(operator)$size))
+    } else {
+      return (operator)
+  }
+}
+
+.td.getContract <- function(contract){
+  if (!is.character(contract) || nchar(contract) == 0){
+    stop("contract argument must be a character vector")
+  }
+  
+  if (file.exists(contract)){
+    return (readChar(contract, file.info(contract)$size))
+  } else {
+    return (contract)
+  }
+}
+
+# Currently only supporting Returns/Operator/Contract USING clauses
+.td.usingClause <- function(operator, returns=NULL, contract=NULL){
+  
+  if (is.null(returns) && is.null(contract)){
+    stop("ExecR must have either returns or contract arguments but not both")
+  }
+  
+  if (nchar(operator) == 0){
+    stop("Operator for ExecR must be provided")
+  }
+  
+  if (is.null(contract)){
+    
+    if (!is.atomic(returns) && !is.character(returns)){
+      stop("returns argument must be a character vector")
+    }
+    
+    baseText = "RETURNS (%s) USING \n Operator('%s')"
+    return (res <- gettextf(baseText, paste(returns, collapse = ', '), .td.getOperator(operator)))
+    
+    } else{
+    
+    baseText = "USING \n Contract('\n%s') \n Operator('\n%s')"
+    return(gettextf(baseText, .td.getContract(contract), .td.getOperator(operator)))
+  
+  }
+}
