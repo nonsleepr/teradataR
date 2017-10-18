@@ -969,12 +969,12 @@
       stop("returns argument must be a character vector")
     }
     
-    baseText = "RETURNS (%s) USING \n Operator(%s)"
+    baseText = "RETURNS (%s) USING \n Operator('%s')"
     return (res <- gettextf(baseText, paste(returns, collapse = ', '), .td.getOperator(operator)))
     
     } else{
     
-    baseText = "USING \n Contract(%s) \n Operator(%s)"
+    baseText = "USING \n Contract('\n%s') \n Operator('\n%s')"
     return(gettextf(baseText, .td.getContract(contract), .td.getOperator(operator)))
   
   }
