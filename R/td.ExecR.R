@@ -2,9 +2,7 @@ td.ExecR <- function(selectPhrase=string, ons=list(), returns=NULL, contract=NUL
   ons<- unlist(ons)
   ons <- paste(ons, sep="", collapse="\n")
   using <- .td.usingClause(returns=returns, contract=contract, operator=operator)
-  queryText <- paste(selectPhrase, "(\n", ons, using, ") ", optional_operators, ") as db;")
-  print(queryText)
+  queryText <- paste(selectPhrase, "(\n", ons, "\n", using, optional_operators, "\n) as db;")
 
   return(queryText)
-
 }

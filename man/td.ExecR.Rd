@@ -5,7 +5,7 @@
 ExecR Wrapper Function
 }
 \description{
-This function is a wrapper function around the table operator ExecR.  It generates a string that can be passed into the function tdQuery to make a query that uses ExecR.
+This function is a wrapper function around the table operator ExecR.  It generates a string that can be passed into the function tdQuery to make a query that uses ExecR. The Contract and Operator can be given as character vectors or read from files. In the latter case, the path to the file is given for Contract or Operator. The file(s) must include only R code, the contents of the files essentially get copied. Files paths can be specified by using relative paths from getwd() or the absolute path.
 }
 \usage{
 td.ExecR(selectPhrase=string, ons=list(), returns=NULL, contract=NULL, operator=string, optional_operators=NULL)
@@ -19,10 +19,10 @@ a character that represents a select phrase
 a list or character representation of on clauses 
 }
   \item{returns}{
-a file or character representation of a returns clause  
+a character vector of a returns clause (e.g. returns <- c("col1 int", "col2 real"))
 }
   \item{contract}{
-a file or character representation of a contract clause  
+a file or character representation of a contract clause.
 }
   \item{operator}{
 a file or character representation of an operator clause 
