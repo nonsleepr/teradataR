@@ -15,8 +15,11 @@ td.sample <- function(tdf, sizes = missing, oTable = "", oDatabase = "") {
         if (.td.objectExists(oObj)) 
             stop(gettextf("Table %s already exists.", oObj))
         query <- gettextf("CREATE TABLE %s AS (%s) WITH DATA", oObj, query)
+        df <- try(tdQueryUpdate(query))
+    } else {
+      df <- try(tdQuery(query))
     }
-    df <- try(tdQueryUpdate(query))
+    
     if (is.data.frame(df)) 
         return(df)
     if (length(df) == 1L && df == "No Data") 
